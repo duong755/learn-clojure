@@ -1,0 +1,5 @@
+(assert (= true true))
+(assert (= (= 1 1) true))
+(assert (= (< 1 2) true))
+(assert (= (not= 1 2) true))
+(assert (= (not false) true))
