@@ -2,5 +2,5 @@
 
 (defn problem_4 []
   (println "Problem 4, Lists")
-  (assert true
-        (= (list :a :b :c) '(:a :b :c))))
+  (assert
+   (= (list :a :b :c) '(:a :b :c))))

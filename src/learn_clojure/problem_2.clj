@@ -2,6 +2,6 @@
 
 (defn problem_2 []
   (println "Problem 2, Simple Math")
-  (assert true
-          (= (- 10 (* 2 3)) 4)))
+  (assert
+   (= (- 10 (* 2 3)) 4)))
 
