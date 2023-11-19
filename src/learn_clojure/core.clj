@@ -6,7 +6,8 @@
   (:require learn-clojure.problem-5)
   (:require learn-clojure.problem-6)
   (:require learn-clojure.problem-7)
-  (:require learn-clojure.problem-8))
+  (:require learn-clojure.problem-8)
+  (:require learn-clojure.problem-9))
 
 (defn -main
   [& args]
@@ -19,4 +20,5 @@
     "6" (learn-clojure.problem-6/problem_6)
     "7" (learn-clojure.problem-7/problem_7)
     "8" (learn-clojure.problem-8/problem_8)
+    "9" (learn-clojure.problem-9/problem_9)
     (println "No match found. Please choose a positive interger.")))
