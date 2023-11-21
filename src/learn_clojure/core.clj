@@ -24,7 +24,8 @@
   (:require learn-clojure.problem-23)
   (:require learn-clojure.problem-24)
   (:require learn-clojure.problem-25)
-  (:require learn-clojure.problem-26))
+  (:require learn-clojure.problem-26)
+  (:require learn-clojure.problem-27))
 
 (defn -main
   [& args]
@@ -55,4 +56,5 @@
     "24" (learn-clojure.problem-24/problem_24)
     "25" (learn-clojure.problem-25/problem_25)
     "26" (learn-clojure.problem-26/problem_26)
+    "27" (learn-clojure.problem-27/problem_27)
     (println "No match found. Please choose a positive interger.")))
