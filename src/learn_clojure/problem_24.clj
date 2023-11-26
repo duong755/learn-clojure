@@ -4,7 +4,7 @@
   (println "Problem 24, Sum It All Up")
   (let [result-1
         (fn my-sum [x]
-          (if (= (count x) 0)
+          (if (zero? (count x))
             0
             (+ (first x) (my-sum (rest x)))))]
     (assert (= (result-1 [1 2 3]) 6))
