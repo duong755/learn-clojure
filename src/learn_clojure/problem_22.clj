@@ -4,7 +4,7 @@
   (println "Problem 22, Count a Sequence")
   (let [result
         (fn my-count [x]
-          (if (= (first x) nil)
+          (if (nil? (first x))
             0
             (inc (my-count (rest x)))))]
     (assert (= (result '(1 2 3 3 1)) 5))
