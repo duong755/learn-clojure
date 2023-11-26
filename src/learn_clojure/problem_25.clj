@@ -10,4 +10,13 @@
     (assert
      (= (result [2 2 4 6]) '()))
     (assert
-     (= (result [1 1 1 3]) '(1 1 1 3)))))
+     (= (result [1 1 1 3]) '(1 1 1 3))))
+  (let [result-2 #(filter odd? %)]
+    (assert
+     (= (result-2 #{1 2 3 4 5}) '(1 3 5)))
+    (assert
+     (= (result-2 [4 2 1 6]) '(1)))
+    (assert
+     (= (result-2 [2 2 4 6]) '()))
+    (assert
+     (= (result-2 [1 1 1 3]) '(1 1 1 3)))))
