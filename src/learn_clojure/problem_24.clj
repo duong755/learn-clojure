@@ -26,7 +26,7 @@
               result
               (recur
                (rest input-seq)
-               (+ result (first input-seq))))))]
+               (long (+ result (first input-seq)))))))]
     (assert (= (result-2 [1 2 3]) 6))
     (assert (= (result-2 (list 0 -2 5 5)) 8))
     (assert (= (result-2 #{4 2 1}) 7))

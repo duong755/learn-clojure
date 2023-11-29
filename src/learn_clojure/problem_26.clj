@@ -39,7 +39,7 @@
               :else (recur
                (dec length)
                (concat fib-seq (list first-num))
-               (+ (last fib-seq) first-num)))))]
+               (long (+ (last fib-seq) first-num))))))]
     (assert (= (result-3 3) '(1 1 2)))
     (assert (= (result-3 6) '(1 1 2 3 5 8)))
     (assert (= (result-3 8) '(1 1 2 3 5 8 13 21)))))
