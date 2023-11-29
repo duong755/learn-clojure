@@ -27,4 +27,19 @@
                                      (last (butlast previous))))))))]
     (assert (= (result-2 3) '(1 1 2)))
     (assert (= (result-2 6) '(1 1 2 3 5 8)))
-    (assert (= (result-2 8) '(1 1 2 3 5 8 13 21)))))
+    (assert (= (result-2 8) '(1 1 2 3 5 8 13 21))))
+  (let [result-3
+        (fn [n]
+          (loop [length n
+                 fib-seq '(1)
+                 first-num 1]
+            (cond
+              (= length 0) '()
+              (= length 1) fib-seq
+              :else (recur
+               (dec length)
+               (concat fib-seq (list first-num))
+               (+ (last fib-seq) first-num)))))]
+    (assert (= (result-3 3) '(1 1 2)))
+    (assert (= (result-3 6) '(1 1 2 3 5 8)))
+    (assert (= (result-3 8) '(1 1 2 3 5 8 13 21)))))
