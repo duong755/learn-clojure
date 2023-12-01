@@ -1,32 +1,34 @@
 (ns learn-clojure.problem-23)
 
+(defn result-1-reverse [s]
+  (if (< (count s) 2)
+    s
+    (concat
+     (result-1-reverse (rest s))
+     (conj nil (first s)))))
+
+(defn result-2-reverse [s]
+  (loop [rest-of-s (rest s)
+         first-of-s (list (first s))]
+    (if (<= (count rest-of-s) 1)
+      (concat rest-of-s first-of-s)
+      (recur
+       (rest rest-of-s)
+       (concat (list (first rest-of-s)) first-of-s)))))
+
 (defn problem_23 []
   (println "Problem 23, Reverse a Sequence")
-  (let [result
-        (fn my-reverse [x]
-          (if (< (count x) 2)
-            x
-            (concat
-             (my-reverse (rest x))
-             (conj nil (first x)))))]
-    (assert
-     (= (result [1 2 3 4 5]) [5 4 3 2 1]))
-    (assert
-     (= (result (sorted-set 5 7 2 7)) '(7 5 2)))
-    (assert
-     (= (result [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]])))
-  (let [result
-        (fn my-reverse [x]
-            (loop [rest-of-x (rest x)
-                   first-of-x (list (first x))]
-              (if (<= (count rest-of-x) 1)
-                (concat rest-of-x first-of-x)
-                (recur
-                 (rest rest-of-x)
-                 (concat (list (first rest-of-x)) first-of-x)))))]
-    (assert
-     (= (result [1 2 3 4 5]) [5 4 3 2 1]))
-    (assert
-     (= (result (sorted-set 5 7 2 7)) '(7 5 2)))
-    (assert
-     (= (result [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]]))))
+
+  (assert
+   (= (result-1-reverse [1 2 3 4 5]) [5 4 3 2 1]))
+  (assert
+   (= (result-1-reverse (sorted-set 5 7 2 7)) '(7 5 2)))
+  (assert
+   (= (result-1-reverse [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]]))
+
+  (assert
+   (= (result-2-reverse [1 2 3 4 5]) [5 4 3 2 1]))
+  (assert
+   (= (result-2-reverse (sorted-set 5 7 2 7)) '(7 5 2)))
+  (assert
+   (= (result-2-reverse [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]])))
