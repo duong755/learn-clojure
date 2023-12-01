@@ -7,10 +7,8 @@
          left s1
          right s2
          result (empty s1)]
-    (let [first-left (first left)
-          first-right (first right)
-          rest-left (rest left)
-          rest-right (rest right)
+    (let [[first-left & rest-left] left
+          [first-right & rest-right] right
           count-left (count left)]
       (if (zero? length)
         (if (= turn :left)
