@@ -34,7 +34,7 @@
                            result
                            (recur
                             (concat result (conj nil (nth input-seq next-index)))
-                            (+ number next-index))))))
+                            (long (+ number next-index)))))))
         drop-every (fn [input-seq number]
                      (if (empty? input-seq)
                        input-seq

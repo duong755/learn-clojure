@@ -6,7 +6,7 @@
          next n]
     (if (zero? next)
       result
-      (recur (* result next) (dec next)))))
+      (recur (long (* result next)) (dec next)))))
 
 (defn problem_42 []
   (println "Problem 42, Factorial Fun")
