@@ -87,4 +87,4 @@
     "40" (learn-clojure.problem-40/problem_40)
     "41" (learn-clojure.problem-41/problem_41)
     "42" (learn-clojure.problem-42/problem_42)
-    (println "No match found. Please choose a positive interger.")))
+    (println "No match found. Please choose a positive integer.")))

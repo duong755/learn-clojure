@@ -10,15 +10,18 @@
 
 (defn result-3-second-to-last
   [s]
-  (if (= (count s) 2)
-    (first s)
-    (result-3-second-to-last (rest s))))
+  (cond
+    (< (count s) 2) (throw IndexOutOfBoundsException)
+    (= (count s) 2) (first s)
+    :else (result-3-second-to-last (rest s))))
 
 (defn result-4-second-to-last [s]
   (loop [input-list s]
-    (if (= (count input-list) 2)
-      (first input-list)
-      (recur (rest input-list)))))
+    (let [input-length (count input-list)]
+      (cond
+        (< input-length 2) (throw IndexOutOfBoundsException)
+        (= input-length 2) (first input-list)
+        :else (recur (rest input-list))))))
 
 (defn problem_20 []
   (println "Problem 20, Penultimate Element")

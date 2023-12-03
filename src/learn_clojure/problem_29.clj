@@ -10,6 +10,7 @@
     (reduce str (filter is-upper-letter s))))
 
 (defn result-2-cap
+  ;; the following solution does not work in 4ever-clojure (the browser)
   [s]
   (let [char-code-A (Character/codePointAt "A" 0)
         char-code-Z (Character/codePointAt "Z" 0)
@@ -31,7 +32,7 @@
   (assert (= (result-1-cap "HeLlO, WoRlD!") "HLOWRD"))
   (assert (empty? (result-1-cap "nothing")))
   (assert (= (result-1-cap "$#A(*&987Zf") "AZ"))
-  ;; the following solution does not work in 4ever-clojure
+
   (assert (= (result-2-cap "HeLlO, WoRlD!") "HLOWRD"))
   (assert (empty? (result-2-cap "nothing")))
   (assert (= (result-2-cap "$#A(*&987Zf") "AZ"))
