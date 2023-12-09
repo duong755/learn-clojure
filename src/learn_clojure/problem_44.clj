@@ -16,6 +16,13 @@
         (let [rotate-index (rem (+ (rem (+ index num) len) len) len)]
           (recur (concat result (conj nil (nth s rotate-index))) (inc index)))))))
 
+(defn result-3-rotate-seq
+  [num s]
+  (let [len (count s)]
+    (map-indexed
+     (fn [index _]
+       (nth s (rem (+ (rem (+ index num) len) len) len))) s)))
+
 (defn problem_44 []
   (println "Problem 44, Rotate Sequence")
 
@@ -29,4 +36,10 @@
   (assert (= (result-2-rotate-seq -2 [1 2 3 4 5]) '(4 5 1 2 3)))
   (assert (= (result-2-rotate-seq 6 [1 2 3 4 5]) '(2 3 4 5 1)))
   (assert (= (result-2-rotate-seq 1 '(:a :b :c)) '(:b :c :a)))
-  (assert (= (result-2-rotate-seq -4 '(:a :b :c)) '(:c :a :b))))
+  (assert (= (result-2-rotate-seq -4 '(:a :b :c)) '(:c :a :b)))
+
+  (assert (= (result-3-rotate-seq 2 [1 2 3 4 5]) '(3 4 5 1 2)))
+  (assert (= (result-3-rotate-seq -2 [1 2 3 4 5]) '(4 5 1 2 3)))
+  (assert (= (result-3-rotate-seq 6 [1 2 3 4 5]) '(2 3 4 5 1)))
+  (assert (= (result-3-rotate-seq 1 '(:a :b :c)) '(:b :c :a)))
+  (assert (= (result-3-rotate-seq -4 '(:a :b :c)) '(:c :a :b))))
