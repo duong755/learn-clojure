@@ -34,6 +34,8 @@
              (concat fib-seq (list next-num))
              (long (+ (last fib-seq) next-num))))))
 
+(defn result-4-fib [n] (take n (map first (iterate (fn [[a b]] [b (+' a b)]) [1 1]))))
+
 (defn problem_26 []
   (println "Problem 26, Fibonacci Sequence")
 
@@ -47,4 +49,8 @@
 
   (assert (= (result-3-fib 3) '(1 1 2)))
   (assert (= (result-3-fib 6) '(1 1 2 3 5 8)))
-  (assert (= (result-3-fib 8) '(1 1 2 3 5 8 13 21))))
+  (assert (= (result-3-fib 8) '(1 1 2 3 5 8 13 21)))
+
+  (assert (= (result-4-fib 3) '(1 1 2)))
+  (assert (= (result-4-fib 6) '(1 1 2 3 5 8)))
+  (assert (= (result-4-fib 8) '(1 1 2 3 5 8 13 21))))
