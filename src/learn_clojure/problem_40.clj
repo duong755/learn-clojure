@@ -12,15 +12,14 @@
          rest-element s]
     (if (empty? rest-element)
       result
-      (let [first-rest-element (first rest-element)
-            next-result
-            (concat result
-                    (if (empty? result)
-                      (conj nil first-rest-element)
-                      (conj nil first-rest-element val)))]
-        (if (empty? (rest rest-element))
+      (let [[first-rest-element & rest-rest] rest-element
+            next-result (concat result
+                                (if (empty? result)
+                                  (conj nil first-rest-element)
+                                  (conj nil first-rest-element val)))]
+        (if (empty? rest-rest)
           next-result
-          (recur next-result (rest rest-element)))))))
+          (recur next-result rest-rest))))))
 
 (defn problem_40 []
   (println "Problem 40, Interpose a Seq")

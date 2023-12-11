@@ -2,13 +2,14 @@
 
 (defn result-1-range
   [x y]
-  (loop [result '()
-         start-from x]
-    (let [next-result (concat result (list start-from))]
-      (if (= start-from y) result
-          (if (< start-from y)
-            (recur next-result (inc start-from))
-            (recur next-result (dec start-from)))))))
+  (lazy-seq
+   (loop [result '()
+          start-from x]
+     (let [next-result (concat result (list start-from))]
+       (if (= start-from y) result
+           (if (< start-from y)
+             (recur next-result (inc start-from))
+             (recur next-result (dec start-from))))))))
 
 (defn problem_34 []
   (println "Problem 34, Implement range")

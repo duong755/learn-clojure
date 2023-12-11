@@ -29,6 +29,17 @@
          next-result
          x))) (empty s) s))
 
+(defn result-4-compress
+  [s]
+  (loop [result (empty s)
+         the-rest s]
+    (if (empty? the-rest)
+      result
+      (recur
+       (concat result (list (first the-rest)))
+       (drop-while #(= % (first the-rest)) the-rest)))))
+
+
 (defn problem_30 []
   (println "Problem 30, Compress a Sequence")
 
@@ -42,4 +53,8 @@
 
   (assert (= (apply str (result-3-compress "Leeeeeerrroyyy")) "Leroy"))
   (assert (= (result-3-compress [1 1 2 3 3 2 2 3]) '(1 2 3 2 3)))
-  (assert (= (result-3-compress [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))))
+  (assert (= (result-3-compress [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2])))
+
+  (assert (= (apply str (result-4-compress "Leeeeeerrroyyy")) "Leroy"))
+  (assert (= (result-4-compress [1 1 2 3 3 2 2 3]) '(1 2 3 2 3)))
+  (assert (= (result-4-compress [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))))

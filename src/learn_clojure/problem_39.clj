@@ -44,11 +44,13 @@
            result '()]
       (if (>= n min-len)
         result
-        (recur
-         (inc n)
-         (rest left)
-         (rest right)
-         (concat result (conj nil (first right) (first left))))))))
+        (let [[first-left & rest-left] left
+              [first-right & rest-right] right]
+          (recur
+           (inc n)
+           rest-left
+           rest-right
+           (concat result (conj nil first-right first-left))))))))
 
 
 (defn problem_39 []
