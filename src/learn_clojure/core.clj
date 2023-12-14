@@ -64,7 +64,11 @@
   (:require learn-clojure.problem-62)
   (:require learn-clojure.problem-63)
   (:require learn-clojure.problem-64)
-  (:require learn-clojure.problem-65))
+  (:require learn-clojure.problem-65)
+  (:require learn-clojure.problem-66)
+  (:require learn-clojure.problem-67)
+  (:require learn-clojure.problem-68)
+  (:require learn-clojure.problem-69))
 
 (defn -main
   [& args]
@@ -134,4 +138,8 @@
     "63" (learn-clojure.problem-63/problem_63)
     "64" (learn-clojure.problem-64/problem_64)
     "65" (learn-clojure.problem-65/problem_65)
+    "66" (learn-clojure.problem-66/problem_66)
+    "67" (learn-clojure.problem-67/problem_67)
+    "68" (learn-clojure.problem-68/problem_68)
+    "69" (learn-clojure.problem-69/problem_69)
     (println "No match found. Please choose a positive integer.")))
