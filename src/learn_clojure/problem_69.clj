@@ -2,33 +2,29 @@
 
 (defn result-1-merge-with
   [f & maps]
-  (if (empty? maps)
-    {}
-      (reduce
-       (fn [merge-map current-map]
-         (reduce
-          (fn [result current-key]
-            (if (contains? result current-key)
-              (update result current-key f (current-map current-key))
-              (assoc result current-key (current-map current-key))))
-          merge-map
-          (keys current-map)))
-       (first maps)
-       (rest maps))))
+  (reduce
+   (fn [merge-map current-map]
+     (reduce
+      (fn [result current-key]
+        (if (contains? result current-key)
+          (update result current-key f (current-map current-key))
+          (assoc result current-key (current-map current-key))))
+      merge-map
+      (keys current-map)))
+   {}
+   maps))
 
 (defn result-2-merge-with
   [f & maps]
-  (if (empty? maps)
-    {}
-    (reduce
-     (fn [merge-map current-map]
-       (reduce-kv
-        (fn [m key val]
-          (if (contains? m key)
-            (update m key f val)
-            (assoc m key val))) merge-map current-map))
-     {}
-     maps)))
+  (reduce
+   (fn [merge-map current-map]
+     (reduce-kv
+      (fn [m key val]
+        (if (contains? m key)
+          (update m key f val)
+          (assoc m key val))) merge-map current-map))
+   {}
+   maps))
 
 (defn problem_69 []
   (println "Problem 69, Merge with a Function")
