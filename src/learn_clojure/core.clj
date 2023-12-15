@@ -68,7 +68,10 @@
   (:require [learn-clojure.problem-66 :refer [problem_66]])
   (:require [learn-clojure.problem-67 :refer [problem_67]])
   (:require [learn-clojure.problem-68 :refer [problem_68]])
-  (:require [learn-clojure.problem-69 :refer [problem_69]]))
+  (:require [learn-clojure.problem-69 :refer [problem_69]])
+  (:require [learn-clojure.problem-70 :refer [problem_70]])
+  (:require [learn-clojure.problem-71 :refer [problem_71]])
+  (:require [learn-clojure.problem-72 :refer [problem_72]]))
 
 (defn -main
   [& args]
@@ -142,4 +145,7 @@
     "67" (problem_67)
     "68" (problem_68)
     "69" (problem_69)
+    "70" (problem_70)
+    "71" (problem_71)
+    "72" (problem_72)
     (println "No match found. Please choose a positive integer.")))
