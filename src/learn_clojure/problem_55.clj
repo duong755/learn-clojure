@@ -10,12 +10,12 @@
 (defn result-2-count-occurrences
   [input-seq]
   (loop [result {}
-         the-rest input-seq]
+         [first-rest & rest-rest :as the-rest] input-seq]
     (if (empty? the-rest)
       result
-      (if (result (first the-rest))
-        (recur (update result (first the-rest) inc) (rest the-rest))
-        (recur (assoc result (first the-rest) 1) (rest the-rest))))))
+      (if (result first-rest)
+        (recur (update result first-rest inc) rest-rest)
+        (recur (assoc result first-rest 1) rest-rest)))))
 
 (defn problem_55 []
   (println "Problem 55, Count Occurences")

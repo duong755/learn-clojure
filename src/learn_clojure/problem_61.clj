@@ -3,11 +3,14 @@
 (defn result-1-map
   [vec1 vec2]
   (loop [my-map {}
-         left vec1
-         right vec2]
+         [f-left & r-left :as left] vec1
+         [f-right & r-right :as right] vec2]
     (if (or (empty? left) (empty? right))
       my-map
-      (recur (assoc my-map (first left) (first right)) (rest left) (rest right)))))
+      (recur
+       (assoc my-map f-left f-right)
+       r-left
+       r-right))))
 
 (defn problem_61 []
   (println "Problem 61, Map Construction")
