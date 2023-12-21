@@ -12,7 +12,7 @@
          (remove nil?)
          (reduce #(+ %1 (roman-basic %2)) 0))))
 
-(defn problem-92 []
+(defn problem_92 []
   (println "Problem 92, Read Roman numerals")
   (assert (= 14 (result-1-read-roman "XIV")))
   (assert (= 827 (result-1-read-roman "DCCCXXVII")))

@@ -10,7 +10,7 @@
        (map #(apply hash-set %))
        (apply hash-set)))
 
-(defn problem-77 []
+(defn problem_77 []
   (println "Problem 77, Anagram Finder")
   (assert (= (result-1-anagram-finder ["meat" "mat" "team" "mate" "eat"])
              #{#{"meat" "team" "mate"}}))

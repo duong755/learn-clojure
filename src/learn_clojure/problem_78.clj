@@ -9,7 +9,7 @@
   ([f & args]
    (result-1-trampoline #(apply f args))))
 
-(defn problem-78 []
+(defn problem_78 []
   (println "Problem 78, Reimplement Trampoline")
   (assert (= (letfn [(triple [x] #(sub-two (* 3 x)))
                      (sub-two [x] #(stop? (- x 2)))

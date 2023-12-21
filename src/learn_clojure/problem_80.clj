@@ -8,7 +8,7 @@
       0
       (range 1 n))))
 
-(defn problem-80 []
+(defn problem_80 []
   (println "Problem 80, Perfect Numbers")
   (assert (= (result-1-perfect 6) true))
   (assert (= (result-1-perfect 7) false))

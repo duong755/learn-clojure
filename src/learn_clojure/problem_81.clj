@@ -6,7 +6,7 @@
    #(if (contains? set2 %2) (conj %1 %2) %1)
    #{} set1))
 
-(defn problem-81 []
+(defn problem_81 []
   (println "Problem 81, Set Intersection")
   (assert (= (result-1-intersection #{0 1 2 3} #{2 3 4 5}) #{2 3}))
   (assert (= (result-1-intersection #{0 1 2} #{3 4 5}) #{}))
