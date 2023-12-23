@@ -1,6 +1,7 @@
 (ns learn-clojure.problem-78)
 
 (defn result-1-trampoline
+  "trampoline from https://github.com/clojure/clojure"
   ([f]
    (let [result (f)]
      (if (fn? result)
