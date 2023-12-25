@@ -14,6 +14,11 @@
       (not= (first input-seq) (last input-seq)) false
       :else (recur (rest (butlast input-seq))))))
 
+(defn result-3-is-palindrome
+  [s]
+  (let [seq-s (seq s)]
+    (= seq-s (reverse seq-s))))
+
 (defn problem_27 []
   (println "Problem 27, Palindrome Detector")
 
@@ -27,4 +32,10 @@
   (assert (true? (result-2-is-palindrome "racecar")))
   (assert (true? (result-2-is-palindrome [:foo :bar :foo])))
   (assert (true? (result-2-is-palindrome '(1 1 3 3 1 1))))
-  (assert (false? (result-2-is-palindrome '(:a :b :c)))))
+  (assert (false? (result-2-is-palindrome '(:a :b :c))))
+
+  (assert (false? (result-3-is-palindrome '(1 2 3 4 5))))
+  (assert (true? (result-3-is-palindrome "racecar")))
+  (assert (true? (result-3-is-palindrome [:foo :bar :foo])))
+  (assert (true? (result-3-is-palindrome '(1 1 3 3 1 1))))
+  (assert (false? (result-3-is-palindrome '(:a :b :c)))))
